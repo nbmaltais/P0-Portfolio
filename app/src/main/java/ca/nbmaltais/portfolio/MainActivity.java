@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
 
-        // Setup the parralax scrolling
+        // Setup the parralax scrolling. Taken from Sunshibe app.
         final View appbar = findViewById(R.id.appbar);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
