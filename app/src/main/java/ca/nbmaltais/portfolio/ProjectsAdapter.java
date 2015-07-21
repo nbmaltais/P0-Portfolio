@@ -36,6 +36,9 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         return mItems.size();
     }
 
+    /**
+     * Hold info about a project, incuding the intent to launch the project.
+     */
     static public class Project{
         public final String name;
         public final String description;
@@ -53,6 +56,9 @@ public class ProjectsAdapter extends RecyclerView.Adapter<ProjectsAdapter.ViewHo
         }
     }
 
+    /**
+     * The view holder. Responsible for handling click event on the item.
+     */
     static public class ViewHolder extends RecyclerView.ViewHolder
     {
         Project mProject;

@@ -24,14 +24,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        //getWindow().requestFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         mToolbar = (Toolbar)findViewById(R.id.toolbar);
-        //mToolbar.setTitle(getString(R.string.app_name));
         setSupportActionBar(mToolbar);
 
         mRecyclerView = (RecyclerView)findViewById(R.id.recyclerview);
@@ -43,13 +40,14 @@ public class MainActivity extends AppCompatActivity
         projects.add( ProjectsAdapter.Project.newInstance(this,R.string.football_scores,R.string.football_scores_description));
         projects.add( ProjectsAdapter.Project.newInstance(this,R.string.build_it_bigger,R.string.build_it_bigger_description));
         projects.add( ProjectsAdapter.Project.newInstance(this,R.string.xyz_reader,R.string.xyz_reader_description));
-        projects.add(ProjectsAdapter.Project.newInstance(this, R.string.capstone, R.string.capstone_description));
+        projects.add( ProjectsAdapter.Project.newInstance(this, R.string.capstone, R.string.capstone_description));
 
         mAdapter = new ProjectsAdapter(projects);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mAdapter);
 
+        // Setup the parralax scrolling
         final View appbar = findViewById(R.id.appbar);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
                     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
